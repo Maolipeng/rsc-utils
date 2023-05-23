@@ -3,7 +3,13 @@
 一些实用的工具函数，支持浏览器和node两端使用
 
 ## install
+ ```
  npm i rsc-utils
+ ```
+ or
+ ```
+ yarn add rsc-utils
+ ```
 ## usage
 ```
 // 例如需要引用camel2Underscore方法
