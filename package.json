@@ -1,6 +1,6 @@
 {
   "name": "rsc-utils",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "rsc-utils",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -11,6 +11,10 @@
     "prepublishOnly": "father doctor && npm run build"
   },
   "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maolipeng/rsc-utils"
+  },
   "authors": [
     "maolipeng"
   ],
@@ -24,5 +28,8 @@
   },
   "devDependencies": {
     "father": "^4.2.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.21.5"
   }
 }
