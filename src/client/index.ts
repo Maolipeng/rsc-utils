@@ -203,3 +203,25 @@ export const mergeNotEmpty = (params: Record<string, string>) => {
     return res;
   }, {});
 };
+
+
+/**
+ * 拍平数组键值：用于处理需要收集数组key，(比如编辑某个树时需要收集所有id，统一处理所有元素具有同类功能，例如edittable设置可编辑行)
+ * @param data 需要处理的数据
+ * @param field 需要收集的字段，默认为'id'
+ * @returns 收集到的键值数组
+ */
+export const concllectKeysKey = <T extends Record<string, any>[]>(data: T, field: string = 'id'): string[] => {
+  if (!Array.isArray(data)) {
+    throw new TypeError('Expected data to be an array')
+  }
+  return data.map((item) => {
+      const fieldVal = item[field]
+      if (item.children) {
+        const subKeys = concllectKeysKey(item.children, field);
+        return [fieldVal, ...subKeys];
+      }
+      return fieldVal;
+    })
+    .flat().filter(Boolean);
+};

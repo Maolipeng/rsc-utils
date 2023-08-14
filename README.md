@@ -132,3 +132,51 @@ const params = { a: '  ', b: 'example' };
 const result = mergeNotEmpty(params);
 console.log(result); // 输出: { b: 'example' }
 ```
+
+### 拍平数组键值
+
+```
+const list = [
+  {
+    id: "1",
+    name: "name-1",
+    children: [
+      {
+        id: "1-1",
+        name: "name-1-1"
+      },
+      {
+        id: "1-2",
+        name: "name-1-2"
+      },
+      {
+        id: "1-3",
+        name: "name-1-3"
+      }
+    ]
+  },
+  {
+    id: "2",
+    name: "name-2",
+    children: [
+      {
+        id: "2-1",
+        name: "name-2-1"
+      },
+      {
+        id: "2-2",
+        name: "name-2-2"
+      },
+      {
+        id: "2-3",
+        name: "name-2-3"
+      }
+    ]
+  }
+];
+const resId = concllectKeysKey(list);
+console.log("resId", resId);
+
+const resName = concllectKeysKey(list, "name");
+console.log("resName", resName);
+```
